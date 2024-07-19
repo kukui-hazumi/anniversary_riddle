@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="riddle.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <title>猫の通り道</title>
+  </head>
+  <body class="prologue">
+    <h1>Cat hole</h1>
+    <p>
+      <img src="cathole.jpg" id="cathole" title="どこかへ続く道" height="150px"><br>
+      事務所の裏に来たが、これは何の穴だ？<br>
+      ちょうど猫が通れそうではあるが...。俺は流石に通れないよなあ。
+    </p>
+    <script>
+      var pic = document.getElementById('cathole');
+      pic.addEventListener( "click" , function(){ picCheck(); } );
+
+      setinCookie("addlink","<a href=\"enTrance.html\">猫の通り道を見る</a>");
+    </script>
+    <p class="hint">
+      <span>ヒント</span><br />
+			<span class="apatetic">何も分からなかったら、他の人に手を貸してもらうのもありですよ。</span>
+		</p>
+    <div id="footer2">
+      <a href="phone_outside.html">電話する</a><br>
+		</div>
+  </body>
+</html>

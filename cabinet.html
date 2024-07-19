@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="riddle.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <title>戸棚</title>
+  </head>
+  <body class="explore">
+    <h1>Cabinet</h1>
+    <p>
+      ここにマーロウのキャットフードが入っている。それも5つ。<br>
+      あいつはかなりのグルメで、一昨日までに食べたキャットフードを食べようとしないんだよ。<br>
+      毎日別の味を楽しみたいんだろう。マーロウにキャットフードを好きに選ばさせると最後に食べたのが一番前のキャットフードを選ぶんだ。<br>
+      で、今日のマーロウの好みはどれだったかな...。昨日は青色のキャットフードを食べさせたのは覚えてるんだが...。<br>
+      過去5日の彼の食事を思い出そう。<br><br>
+
+      マーロウが食べたキャットフードは5日前から順に.....<br>
+      <div id="cat_food"></div>
+      <input type="button" value="決定" onclick="OnButtonClick();"/>
+      <script>
+        setinCookie("addlink","<a href=\"phone.html\">電話する</a>");
+        var food = [];
+        var foodname = ["red","orange","yellow","green","blue"];
+        var content_area = document.getElementById("cat_food");
+        for (i=0;i<5;i++){
+          var img_element = document.createElement('img');
+          img_element.src = 'pet_food_red.png';
+          img_element.title=""+ 5-i +"日前"
+          img_element.width = 100;
+          img_element.addEventListener( "click" , function(){ foodChange(this); } );
+          content_area.appendChild(img_element);
+          food.push(img_element);
+        }
+
+
+        function foodChange(element){
+          var name = element.src.split("_");
+          var color = name[name.length-1].split(".");
+
+          var foodnum = foodname.indexOf(color[0]);
+          if(foodnum>=0){
+            foodnum++;
+            if(foodnum==5){
+              foodnum = 0;
+            }
+          }
+          element.src = "pet_food_"+ foodname[foodnum]+".png";
+        }
+
+        function OnButtonClick(){
+          var result = "";
+          for (i=0;i<5;i++){
+            var name = food[i].src.split("_");
+            var color = name[name.length-1].split(".");
+            result = result + color[0].charAt(0);
+          }
+          document.location.href= result + '.html';
+        }
+
+      </script>
+    </p>
+    <!-- たぶん一意に確定すると思うけど、しなかったらゴメン！ -->
+    <p class="hint">
+      <span>ヒント</span><br />
+			<span class="apatetic2">他の人に電話したり、他の場所を探すと分かるかもしれません。</span>
+		</p>
+    <div id="footer2">
+      <a href="start.html">探索に戻る</a><br>
+      <script>
+      if(getinCookie("addlink")!=""){
+        document.write(getinCookie("addlink"));
+      }
+      </script>
+		</div>
+
+  </body>
+</html>

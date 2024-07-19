@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="riddle.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <title>スタート</title>
+  </head>
+  <body class="explore">
+    <h1>Explore</h1>
+    <p>
+      マーロウを探すのに必要なのは2つ。マーロウの写真とマーロウの餌だ。両方見つけたらここに戻ってこよう。<br>
+      さて...どこを調べようか？<br>
+      <a href="desk.html">机</a><br>
+      <a href="cabinet.html">戸棚</a>
+      <script>
+        var picture = getinCookie("picture");
+        var catfood = getinCookie("catfood");
+        if(picture!="" && catfood!=""){
+          document.write("<br><a href=\""+picture+catfood+"\".html>マーロウを探しに行く</a>");
+        }
+      </script>
+    </p>
+    <p class="hint">
+      <span>ヒント</span><br />
+			<span class="apatetic2">迷ったときはヒントを見ましょう。それでも分からない時は...いっそアザラシさんに聞いてみてもよいと思われます。</span>
+		</p>
+    <div id="footer2">
+      <input type="button" value="reset" onclick='resetallCookie()'/><br>
+      <script>
+      if(getinCookie("addlink")!=""){
+        document.write(getinCookie("addlink"));
+      }
+      </script>
+		</div>
+  </body>
+</html>

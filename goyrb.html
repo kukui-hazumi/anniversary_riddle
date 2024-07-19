@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="riddle.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <title>推理完了</title>
+  </head>
+  <body class="explore">
+    <h1>Favorite cat food</h1>
+    <script type="text/javascript">
+      setinCookie ("catfood", "GreenFood");
+    </script>
+    <p>
+      よし！これで5日間の餌が分かったぞ！<br>
+      マーロウが最近食べていなかった緑色の餌を持って行けばよさそうだな。<br>
+    </p>
+    <p class="qs2">
+      マーロウの好みの餌を見つけた！
+    </p>
+    <p class="hint">
+      <span>ヒント</span><br />
+			<span class="apatetic2">写真も見つけたら「探索に戻る」で最初のページに戻りましょう。</span>
+		</p>
+    <div id="footer2">
+      <a href="start.html">探索に戻る</a><br>
+      <script>
+      if(getinCookie("addlink")!=""){
+        document.write(getinCookie("addlink"));
+      }
+      </script>
+		</div>
+  </body>
+</html>

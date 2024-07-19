@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="riddle.css" />
+    <script type="text/javascript" src="common.js"></script>
+    <title>時計</title>
+  </head>
+  <body class="prologue">
+    <h1>Clock</h1>
+    <p>
+      どれ、時計を見て見るか。
+    </p>
+    <div id="clock"></div>
+    <p>
+      あれ？何かがおかしいような気がするが...。
+    </p>
+  <script>
+    // 時計の表示を更新する関数
+    function updateClock() {
+      // 現在の日時を取得
+      var now = new Date();
+
+      // 時、分、秒を取得
+      const month = now.getMonth()+1;
+      const day = now.getDate();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+
+      // 時、分、秒が1桁の場合は0を追加
+      const displayDay = day.toString().padStart(2, "0");
+      const displayHours = hours.toString().padStart(2, "0");
+      const displayMinutes = minutes.toString().padStart(2, "0");
+      const displaySeconds = seconds.toString().padStart(2, "0");
+
+      // 時計の要素を取得
+      const clockElement = document.getElementById("clock");
+
+      // 時計の要素に時刻を表示
+      clockElement.textContent = `${month}月${displayDay}日 ${displayHours}:${displayMinutes}:${displaySeconds}`;
+      // 1秒後に再度更新
+      setTimeout(updateClock, 1000);
+    }
+    window.addEventListener('load', function () {
+      updateClock();
+    });
+  </script>
+    <p class="hint">
+      <span>ヒント</span><br />
+			<span class="apatetic">上手く更新していないときは、一度戻ってまた来るとか、一旦ページを閉じて再度開く等お願いします。<br>
+        そういえば時計が7/12を指していないことがありますね。何の時間なんでしょうか？</span>
+		</p>
+    <div id="footer2">
+      <a href="start.html">探索に戻る</a><br>
+      <script>
+      if(getinCookie("addlink")!=""){
+        document.write(getinCookie("addlink"));
+      }
+		</div>
+  </body>
+</html>
